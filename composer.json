@@ -1,0 +1,16 @@
+{
+    "name": "lotfio/silo",
+    "description": "fast for lazy devs",
+
+    "require": {
+        "lotfio/aven"  : "dev-develop",
+        "lotfio/ouch"  : "dev-develop",
+        "lotfio/oofile": "dev-develop"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "App\\" : "app/"
+        }
+    }
+}

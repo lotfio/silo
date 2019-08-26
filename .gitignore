@@ -1,0 +1,8 @@
+/vendor/
+composer.lock
+phpunit
+.idea
+.vscode
+.editorconfig
+TODO
+todo

@@ -1,0 +1,48 @@
+#!/usr/bin/env php
+<?php declare(strict_types=1);
+
+/**
+ *
+ * @author    <contact@lotfio.net>
+ * @package   Conso PHP Console Creator
+ * @version   0.1.0
+ * @license   MIT
+ * @category  CLI
+ * @copyright 2019 Lotfio Lakehal
+ */
+
+use Conso\Input;
+use Conso\Output;
+use Conso\Config;
+use App\Kernel\Http;
+
+require 'vendor/autoload.php';
+
+$webKernel = new Http;
+
+$webKernel->enableErrorHandler();
+
+$webKernel->loadConfig();
+
+$webKernel->loadWebRoutes();
+
+/**
+ * load config
+ */
+Config::load();
+
+/**
+ * adding custom config
+ * example:
+ * COMMANDS  => your commands dir
+ * NAMESPACE => your commands namespace
+ */
+Config::add('vendor/lotfio/aven/src/Aven/Console/conf.php');
+/**
+ * get instance
+ */
+$app = new Conso\App(new Input, new Output);
+
+
+// start application
+$app->run();
