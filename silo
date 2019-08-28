@@ -20,24 +20,22 @@ require 'vendor/autoload.php';
 
 $webKernel = new Http;
 
-$webKernel->enableErrorHandler();
-
 $webKernel->loadConfig();
-
 $webKernel->loadWebRoutes();
 
-/**
- * load config
- */
-Config::load();
 
-/**
- * adding custom config
- * example:
- * COMMANDS  => your commands dir
- * NAMESPACE => your commands namespace
- */
-Config::add('vendor/lotfio/aven/src/Aven/Console/conf.php');
+Config::load(); // load config
+Config::appName("silo");
+Config::appVersion("0.1.0");
+Config::appRelease("0000000");
+Config::appLogo();
+Config::appDefaultCommand();
+
+Config::addCommands('vendor/lotfio/aven/src/Aven/Console/Commands/'); //your commands file should be added here
+
+Config::addCommands('app/Console/Commands/'); //your commands file should be added here
+Config::addNamespace('App\\Console\\Commands\\'); // your commands namespace shoud be added here
+
 /**
  * get instance
  */
