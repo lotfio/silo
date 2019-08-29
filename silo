@@ -18,8 +18,9 @@ use App\Kernel\Http;
 
 require 'vendor/autoload.php';
 
-$webKernel = new Http;
+$webKernel = new Http; // sould be replaced with consol kernel
 
+$webKernel->enableErrorHandler();
 $webKernel->loadConfig();
 $webKernel->loadWebRoutes();
 

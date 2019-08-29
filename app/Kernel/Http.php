@@ -24,7 +24,7 @@ class Http
      */
     public function loadConfig()
     {
-        return Conf::add(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'conf/');
+        return Conf::add(dirname(__DIR__,2) . DIRECTORY_SEPARATOR . 'conf/');
     }
 
     /**
