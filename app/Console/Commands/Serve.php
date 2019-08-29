@@ -78,15 +78,18 @@ class Serve extends Command implements CommandInterface
      */
     public function checkAvailablePort()
     {
-        $con      = @fsockopen($this->host, $this->port);
-        if($con)
-        {
-            ++$this->port;
-            $con = @fsockopen($this->host, $this->port);
-        }
+        try{ // skip fsock warning since we are using exception handler
+            //  it will throw a warning exception and catch it
+            $con      = fsockopen($this->host, $this->port);
+            if($con)
+            {
+                ++$this->port;
+                $con = fsockopen($this->host, $this->port);
+            }
+            fclose($con);
+            return $this->port;
 
-        @fclose($con);
-        return $this->port;
+        }catch(\Exception $e){}
     }
 
     /**
