@@ -35,11 +35,11 @@ class Http
     public function loadWebRoutes()
     {
         aven::config(array(
-            "namespace" => conf("namespace"),
-            "cache"     => conf("cache")
+            "namespace" => Conf::app("namespace"),
+            "cache"     => Conf::app("cache")
         ));
 
-        require conf("routes") . "web.php"; // load routes
+        require Conf::app("routes") . "web.php"; // load routes
 
         Aven::init();
     }

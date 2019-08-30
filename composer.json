@@ -5,7 +5,7 @@
     "require": {
         "lotfio/aven"  : "dev-develop",
         "lotfio/ouch"  : "dev-develop",
-        "lotfio/oofile": "dev-develop",
+        "lotfio/oofile": ">=0.1.0",
         "lotfio/conso" : "dev-develop"
     },
 

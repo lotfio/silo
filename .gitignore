@@ -3,6 +3,7 @@ composer.lock
 phpunit
 .idea
 .vscode
+.env
 .editorconfig
 TODO
 todo
