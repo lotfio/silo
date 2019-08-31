@@ -13,6 +13,6 @@ class IndexController
 
     public function welcome()
     {
-        return "This is welcome method :) ";
+        return env("APP_KEY");
     }
 }

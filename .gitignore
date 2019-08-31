@@ -1,4 +1,5 @@
 /vendor/
+/app/dump/cache/routes/
 composer.lock
 phpunit
 .idea

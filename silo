@@ -24,17 +24,9 @@ $webKernel->enableErrorHandler();
 $webKernel->loadConfig();
 $webKernel->loadWebRoutes();
 
+Conf::add(__DIR__."/conf/");
 
 $app = new Conso\App(new Input, new Output);
 
-Conf::append("app","COMMANDS", array(
-    __DIR__ . '/vendor/lotfio/aven/src/Aven/Console/Commands',
-    __DIR__ . '/app/Console/Commands',
-));
-
-Conf::append("app","NAMESPACE", array(
-    "Aven\\Console\\Commands\\",
-    "App\\Console\\Commands\\",
-));
 // start application
 $app->run();
