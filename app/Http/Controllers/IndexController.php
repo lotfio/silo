@@ -1,6 +1,5 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-namespace App\Http\Controllers;
 
 class IndexController
 {
@@ -13,6 +12,6 @@ class IndexController
 
     public function welcome()
     {
-        return env("APP_KEY");
+        return "Hello";
     }
 }

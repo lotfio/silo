@@ -1,10 +1,13 @@
 <?php
 
-use App\Kernel\Http;
+use App\Http\Kernel;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
-$httpKernel = new Http;
+/**
+ * load http kernel
+ */
+$httpKernel = new Kernel;
 
 /**
  * Ouch error handler

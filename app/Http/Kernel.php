@@ -1,10 +1,10 @@
-<?php namespace App\Kernel;
+<?php namespace App\Http;
 
 use OoFile\Conf;
 use Ouch\Ouch;
 use Aven\Facades\Aven;
 
-class Http
+class Kernel
 {
     /**
      * Undocumented function

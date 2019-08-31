@@ -13,20 +13,36 @@
 
 use Conso\Input;
 use Conso\Output;
-use OoFile\Conf;
-use App\Kernel\Http;
+use App\Console\Kernel;
 
 require 'vendor/autoload.php';
 
-$webKernel = new Http; // should be replaced with consol kernel
+/**
+ * load kernel
+ */
+$consoleKernel = new Kernel;
 
-$webKernel->enableErrorHandler();
-$webKernel->loadConfig();
-$webKernel->loadWebRoutes();
+/**
+ * enable ouch
+ */
+$consoleKernel->enableErrorHandler();
 
-Conf::add(__DIR__."/conf/");
+/**
+ * load config 
+ */
+$consoleKernel->loadConfig();
 
+/**
+ * load routes for aven
+ */
+$consoleKernel->loadWebRoutes();
+
+/**
+ * bind input and output to app
+ */
 $app = new Conso\App(new Input, new Output);
 
-// start application
+/**
+ * start silo console application
+ */
 $app->run();
