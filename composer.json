@@ -6,12 +6,18 @@
         "lotfio/aven"  : "dev-develop",
         "lotfio/ouch"  : "dev-develop",
         "lotfio/oofile": ">=0.1.0",
-        "lotfio/conso" : "dev-develop"
+        "lotfio/conso" : ">=0.2.0"
     },
 
     "autoload": {
         "psr-4": {
             "App\\" : "app/"
         }
+    },
+
+    "scripts": {
+        "post-create-project-cmd": [
+            "@php -r \"copy('.env.example', '.env');\""
+        ]
     }
 }
