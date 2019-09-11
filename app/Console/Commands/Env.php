@@ -47,16 +47,40 @@ class Env extends Command implements CommandInterface
         switch($sub)
         {
             case 'init' : $this->initEnv(); break;
-            default:  break;
+            case 'dev'  : $this->setDevlopmentMode(); break;
+            case 'pro'  : $this->setProductionMode(); break;
+            default     : $this->output->writeLn("\n Your application envirenment is set to " . env("APP_ENV") . "\n"); break;
         }
     }
 
-    public function initEnv()
+    private function initEnv()
     {
         $dotEnv = new DotEnv;
         $dotEnv->init(array(
             "APP_KEY" => SHA1(SHA1(uniqid()))
         ));
+
+        return $this->output->writeLn("\n Silo envirenment has been initialized \n");
+    }
+
+    /**
+     * setting development mode
+     *
+     * @return void
+     */
+    private function setDevlopmentMode()
+    {
+
+    }
+
+    /**
+     * setting production mode
+     *
+     * @return void
+     */
+    private function setProductionMode()
+    {
+
     }
 
     /**
