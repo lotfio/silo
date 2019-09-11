@@ -1,5 +1,15 @@
 <?php namespace App\Http;
 
+/**
+ * @author    <contact@lotfio.net>
+ * @package   Silo PHP framework
+ * @version   1.0.0
+ * @license   MIT
+ * @category  Framework
+ * @copyright 2019 Lotfio Lakehal
+ * 
+ */
+
 use OoFile\Conf;
 use Ouch\Ouch;
 use Aven\Facades\Aven;
