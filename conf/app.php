@@ -10,14 +10,21 @@
  * 
  */
 
-return array(
-
+return array( // change these to the path Conf::path('');
+ 
     /**
     * + ----------------------------------
     * | base path
     * + ----------------------------------
     **/
     "path"      => dirname(__DIR__) . DIRECTORY_SEPARATOR,
+
+    /**
+    * + ----------------------------------
+    * | base path
+    * + ----------------------------------
+    **/
+    "pub"      => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'pub' . DIRECTORY_SEPARATOR,
     
     /**
     * + ----------------------------------
@@ -32,6 +39,20 @@ return array(
     * + ----------------------------------
     **/
     "routes"    => dirname(__DIR__) . "/app/extras/routes/",
+
+    /**
+    * + ----------------------------------
+    * | views path
+    * + ----------------------------------
+    **/
+    "views"    => dirname(__DIR__) . "/app/extras/views/",
+
+     /**
+    * + ----------------------------------
+    * | assets path
+    * + ----------------------------------
+    **/
+    "assets"    => dirname(__DIR__) . "/app/extras/assets/",
 
     /**
     * + ----------------------------------

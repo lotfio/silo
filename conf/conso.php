@@ -38,7 +38,7 @@ return array(
     * | Cli application name
     * + ----------------------------------
     **/
-    "APP_RELEASE_DATE"  => "00/00/0000 by lotfio  lakehal",
+    "APP_RELEASE_DATE"  => "9-11-2019 by lotfio lakehal",
 
     /**
     * + ----------------------------------
@@ -46,7 +46,6 @@ return array(
     * + ----------------------------------
     **/
     "DEFAULT_COMMAND"   => "Info",
-
 
     /**
     * + ----------------------------------

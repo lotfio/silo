@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use OoFile\Conf;
+
 /**
  * @author    <contact@lotfio.net>
  * @package   Silo PHP framework
@@ -14,13 +16,6 @@ class IndexController
 {
     public function index()
     {
-        return array(
-            "welcome" => "how are u"
-        );
-    }
-
-    public function welcome()
-    {
-        return "Hello";
+        return require \OoFile\Conf::app('views') . 'index.view.php';
     }
 }

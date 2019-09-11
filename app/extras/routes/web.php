@@ -13,5 +13,4 @@
 use Aven\Facades\Aven;
 
 
-Aven::get("/", "IndexController@welcome");
-Aven::get("/index", "IndexController@index");
+Aven::get("/", "IndexController@index");
