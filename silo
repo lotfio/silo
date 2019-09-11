@@ -13,29 +13,16 @@
 
 use Conso\Input;
 use Conso\Output;
-use App\Console\Kernel;
 
+/**
+ * autoloader 
+ */
 require 'vendor/autoload.php';
 
 /**
- * load kernel
+ * get application assistant
  */
-$consoleKernel = new Kernel;
-
-/**
- * enable ouch
- */
-$consoleKernel->enableErrorHandler();
-
-/**
- * load config 
- */
-$consoleKernel->loadConfig();
-
-/**
- * load routes for aven
- */
-$consoleKernel->loadWebRoutes();
+require 'app/assistant.php';
 
 /**
  * bind input and output to app

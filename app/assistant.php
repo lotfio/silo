@@ -26,6 +26,18 @@ $httpKernel->loadConfig();
 /**
  * Aven router
  *
- * load routes
+ * load api routes
+ */
+$httpKernel->loadApiRoutes();
+
+/**
+ * Aven router
+ *
+ * load web routes
  */
 $httpKernel->loadWebRoutes();
+
+/**
+ * bind kernel and load
+ */
+$httpKernel->bind();

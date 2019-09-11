@@ -7,18 +7,18 @@ use Aven\Facades\Aven;
 class Kernel
 {
     /**
-     * Undocumented function
+     * enable ouch error handler method
      *
      * @return void
      */
     public function enableErrorHandler()
     {
         $ouch = new Ouch;
-        $ouch->enableErrorHandler();
+        $ouch->enableErrorHandler(env('APP_ENV'));
     }
 
     /**
-     * Undocumented function
+     * load OoFile Config
      *
      * @return void
      */
@@ -28,7 +28,7 @@ class Kernel
     }
 
     /**
-     * Undocumented function
+     * load web routes method
      *
      * @return void
      */
@@ -39,18 +39,24 @@ class Kernel
             "cache"     => Conf::app("cache")
         ));
 
-        require Conf::app("routes") . "web.php"; // load routes
-
-        Aven::init();
+        return require Conf::app("routes") . "web.php"; // load routes
     }
 
     /**
-     * Undocumented function
+     * load api routes method
      *
      * @return void
      */
     public function loadApiRoutes()
     {
+        return require Conf::app("routes") . "api.php"; // load routes
+    }
 
+    /**
+     * bind aven router
+     */
+    public function bind()
+    {
+        return Aven::init();
     }
 }
