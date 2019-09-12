@@ -7,7 +7,7 @@
  * @license   MIT
  * @category  Framework
  * @copyright 2019 Lotfio Lakehal
- * 
+ *
  */
 
 require '../app/assistant.php';
