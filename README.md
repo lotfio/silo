@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/lotfio/silo/tree/master/pub/favicon.ico"  alt="SILO Preview">
+  <img src="https://raw.githubusercontent.com/lotfio/silo/master/pub/favicon.ico"  alt="SILO Preview">
   <p align="center">
     <img src="https://img.shields.io/badge/Licence-MIT-ffd32a.svg" alt="License">
     <img src="https://img.shields.io/badge/PHP-7.2-808e9b.svg" alt="PHP version">
