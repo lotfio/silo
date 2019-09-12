@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Silo</title>
+    <title>SILO | WELCOME</title>
 
-    <link rel="shortcut icon" type="image/png" href="{{ asset('images/icona.png') }}">
+    <link rel="shortcut icon" type="image/png" href="http://<?=$_SERVER['HTTP_HOST']?>/favicon.ico">
     <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/assets/css/spectre.min.css">
     <!-- spectre css -->
     <style>
@@ -108,7 +108,7 @@
     </div>
 
     <div class="label mt-2 float-right">
-        <b>Version:</b> <span>1.0.5</span>
+        <b>Version:</b> <span><?=env("APP_VERSION")?></span>
     </div>
     <div class="clearfix"></div>
 
@@ -118,7 +118,7 @@
             <div class="columns">
                 <div class="column col-12">
                     <div class="logo">
-                        <img src="logo" height="100">
+                        <img src="http://<?=$_SERVER['HTTP_HOST']?>/favicon.ico" height="100">
                         <h1>Silo</h1>
                         <span>Framework</span>
                     </div>
@@ -139,10 +139,10 @@
         </main>
 
         <div class="main">
-            <a href="#" target="_blank">
+            <!-- <a href="#" target="_blank">
                 <img src="#" width="200">
             </a>
-            <p>Join us on Community HUB</p>
+            <p>Join us on Community HUB</p> -->
         </div>
 
         <footer class="text-center">
