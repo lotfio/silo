@@ -9,13 +9,13 @@ use OoFile\Conf;
  * @license   MIT
  * @category  Framework
  * @copyright 2019 Lotfio Lakehal
- * 
+ *
  */
 
 class IndexController
 {
     public function index()
     {
-        return require \OoFile\Conf::app('views') . 'index.view.php';
+        return require \OoFile\Conf::path('views') . 'index.view.php';
     }
 }

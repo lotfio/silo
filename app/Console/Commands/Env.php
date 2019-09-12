@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Console\Commands;
 
@@ -9,11 +9,11 @@ namespace App\Console\Commands;
  * @license   MIT
  * @category  CLI
  * @copyright 2019 Lotfio Lakehal
- * 
+ *
  * @time      Generated at 30-08-2019 by conso
  */
 
-use OoFile\DotEnv; 
+use OoFile\DotEnv;
 use Conso\Command;
 use Conso\Contracts\CommandInterface;
 use Conso\Exceptions\{OptionNotFoundException, FlagNotFoundException};
@@ -22,34 +22,34 @@ class Env extends Command implements CommandInterface
 {
     /**
      * command flags
-     * 
+     *
      * @var array
      */
     protected $flags = [];
 
     /**
      * command description method
-     * 	
+     *
      * @return string
      */
     protected $description = "Env command description.";
 
     /**
      * command execute method
-     * 
+     *
      * @param  string $sub
      * @param  array  $options
      * @param  array  $flags
      * @return void
      */
     public function execute(string $sub, array $options, array $flags)
-    {   
+    {
         switch($sub)
         {
             case 'init' : $this->initEnv(); break;
-            case 'dev'  : $this->setDevlopmentMode(); break;
+            case 'dev'  : $this->setDevelopmentMode(); break;
             case 'pro'  : $this->setProductionMode(); break;
-            default     : $this->output->writeLn("\n Your application envirenment is set to " . env("APP_ENV") . "\n"); break;
+            default     : $this->output->writeLn("\n Your application environment is set to " . env("APP_ENV") . "\n"); break;
         }
     }
 
@@ -68,7 +68,7 @@ class Env extends Command implements CommandInterface
      *
      * @return void
      */
-    private function setDevlopmentMode()
+    private function setDevelopmentMode()
     {
 
     }
@@ -85,7 +85,7 @@ class Env extends Command implements CommandInterface
 
     /**
      * command help method
-     * 	
+     *
      * @return string
      */
     public function help() { return "Env command help.";}

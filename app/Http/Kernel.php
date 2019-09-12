@@ -7,7 +7,7 @@
  * @license   MIT
  * @category  Framework
  * @copyright 2019 Lotfio Lakehal
- * 
+ *
  */
 
 use OoFile\Conf;
@@ -46,10 +46,10 @@ class Kernel
     {
         aven::config(array(
             "namespace" => Conf::app("namespace"),
-            "cache"     => Conf::app("cache")
+            "cache"     => Conf::path("cache")
         ));
 
-        return require Conf::app("routes") . "web.php"; // load routes
+        return require Conf::path("routes") . "web.php"; // load routes
     }
 
     /**
@@ -59,7 +59,7 @@ class Kernel
      */
     public function loadApiRoutes()
     {
-        return require Conf::app("routes") . "api.php"; // load routes
+        return require Conf::path("routes") . "api.php"; // load routes
     }
 
     /**
