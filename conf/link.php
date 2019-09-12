@@ -17,5 +17,26 @@ return array(
     * | site_url
     * + ----------------------------------
     **/
-    "url"     => env("APP_URL")
+    "url"     =>  ($_SERVER['REQUEST_SCHEME'] ?? env('APP_SCHEME', 'http')) . '://' . ($_SERVER['HTTP_HOST'] ?? env('APP_HOST', 'localhost')) . '/',
+
+    /**
+    * + ----------------------------------
+    * | site scheme
+    * + ----------------------------------
+    **/
+    "scheme"  => $_SERVER['REQUEST_SCHEME'] ?? env('APP_SCHEME', 'http'),
+
+    /**
+    * + ----------------------------------
+    * | site host
+    * + ----------------------------------
+    **/
+    "host"    => $_SERVER['HTTP_HOST'] ?? env('APP_HOST', 'localhost'),
+
+     /**
+    * + ----------------------------------
+    * | site port
+    * + ----------------------------------
+    **/
+    "port"    => $_SERVER['HTTP_port'] ?? env('APP_PORT', '80'),
 );

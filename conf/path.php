@@ -17,21 +17,21 @@ return array(
     * | base path
     * + ----------------------------------
     **/
-    "root"      => dirname(__DIR__) . DIRECTORY_SEPARATOR,
+    "root"      => dirname(__DIR__) .'/',
 
     /**
     * + ----------------------------------
     * | base path
     * + ----------------------------------
     **/
-    "app"      => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR,
+    "app"      => dirname(__DIR__) . '/app/',
 
     /**
     * + ----------------------------------
     * | base path
     * + ----------------------------------
     **/
-    "pub"      => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'pub' . DIRECTORY_SEPARATOR,
+    "pub"      => dirname(__DIR__) . '/pub/',
 
     /**
     * + ----------------------------------

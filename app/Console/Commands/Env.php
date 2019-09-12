@@ -33,7 +33,9 @@ class Env extends Command implements CommandInterface
      * @var array
      */
     private $env = array(
-
+        "APP_NAME" => "Silo",
+        "APP_ENV"  => "dev",
+        "APP_KEY"  => ''
     );
 
     /**
@@ -81,6 +83,23 @@ class Env extends Command implements CommandInterface
     private function init()
     {
         $dotEnv = new DotEnv;
+
+        $this->env["APP_DEBUG"]     =  'true';
+        $this->env[1]               =  'SEPARATOR';
+        $this->env['APP_HOST']      =  'localhost';
+        $this->env['APP_SCHEME']    =  'http';
+        $this->env['APP_PORT']      =  '80';
+        $this->env[2]               =  'SEPARATOR';
+        $this->env["LOG"]           =  'true';
+        $this->env["LOG_CHANNEL"]   =  'true';
+        $this->env[3]               =  'SEPARATOR';
+        $this->env["DB_DRIVER"]     = 'PDO';
+        $this->env["DB_HOST"]       = '127.0.0.1';
+        $this->env["DB_PORT"]       = '3306';
+        $this->env["DB_NAME"]       = 'silo';
+        $this->env["DB_USER"]       = 'root';
+        $this->env["DB_PASS"]       = '';
+
         return $dotEnv->init($this->env);
     }
 
@@ -91,7 +110,7 @@ class Env extends Command implements CommandInterface
      */
     private function generateAppKey()
     {
-        return $this->env["APP_KEY"] = 'base64-' . base64_encode(md5(time()));
+        return $this->env["APP_KEY"]   =  'base64-' . base64_encode(md5(time()));
     }
 
     /**

@@ -70,13 +70,12 @@ class Assets extends Command implements CommandInterface
             throw new RunTimeException("$pub Directory is not writable ");
 
         chdir($pub); // switch to public folder
-
-        if(is_link('assets')) rmdir('assets');
+        if(is_link('assets')) rmdir("assets");
 
         if(symlink($assets, "assets"))
             return $this->output->writeLn("\n assets has been published to the public folder.\n", "green");
 
-        throw new RunTimeException("\nerror publishing assets to public folder.\n", "red");
+        throw new RunTimeException("\error publishing assets to public folder.\n", "red");
     }
 
     /**

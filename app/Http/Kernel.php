@@ -24,7 +24,7 @@ class Kernel
     public function enableErrorHandler()
     {
         $ouch = new Ouch;
-        $ouch->enableErrorHandler(env('APP_ENV'));
+        $ouch->enableErrorHandler(env('APP_ENV', 'pro'));
     }
 
     /**
