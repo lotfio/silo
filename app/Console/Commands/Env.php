@@ -16,7 +16,7 @@ namespace App\Console\Commands;
 use OoFile\DotEnv;
 use Conso\Command;
 use Conso\Contracts\CommandInterface;
-use Conso\Exceptions\{OptionNotFoundException, FlagNotFoundException};
+use Conso\Exceptions\{OptionNotFoundException, FlagNotFoundException, RunTimeException};
 
 class Env extends Command implements CommandInterface
 {
@@ -53,17 +53,24 @@ class Env extends Command implements CommandInterface
      */
     public function execute(string $sub, array $options, array $flags)
     {
-        switch($sub)
+        if(!empty($sub))
         {
-            case 'init' : $this->generateAppKey(); $this->init(); break;
-            case 'dev'  : $this->setDevelopmentMode(); break;
-            case 'pro'  : $this->setProductionMode(); break;
-            default     : $this->output->writeLn("\n Your application environment is set to ");
-                        env('APP_ENV') == 'dev' ?
-                            $this->output->writeLn("Development\n", 'green')
-                        :   $this->output->writeLn("Production\n", 'green');
-            break;
+            switch($sub)
+            {
+                case 'init' : $this->generateAppKey(); $this->init();
+                    $this->output->writeLn("\n Silo environment has been initialized\n");
+                    exit;
+                break;
+                case 'dev'  : $this->setDevelopmentMode();  exit; break;
+                case 'pro'  : $this->setProductionMode();   exit;  break;
+                default     : throw new RunTimeException("Error sub command $sub not recognized"); break; break;
+            }
         }
+
+        $this->output->writeLn("\n Your application is on ");
+        env('APP_ENV') == 'dev' ?
+            $this->output->writeLn("development mode\n", 'green')
+        :   $this->output->writeLn("production mode\n", 'green');
     }
 
     /**
@@ -74,8 +81,7 @@ class Env extends Command implements CommandInterface
     private function init()
     {
         $dotEnv = new DotEnv;
-        $dotEnv->init($this->env);
-        return $this->output->writeLn("\n Silo environment has been initialized \n");
+        return $dotEnv->init($this->env);
     }
 
     /**
@@ -85,7 +91,7 @@ class Env extends Command implements CommandInterface
      */
     private function generateAppKey()
     {
-        $this->env["APP_KEY"] = 'base64-' . base64_encode(md5(time()));
+        return $this->env["APP_KEY"] = 'base64-' . base64_encode(md5(time()));
     }
 
     /**
@@ -97,7 +103,8 @@ class Env extends Command implements CommandInterface
     {
         $this->env["APP_ENV"] = 'dev';
         $this->env["APP_KEY"] = env("APP_KEY"); // don't change app key when switching env
-        return     $this->init();
+        $this->init();
+        return $this->output->writeLn("\n Silo environment has been set to Development \n");
     }
 
     /**
@@ -110,6 +117,7 @@ class Env extends Command implements CommandInterface
         $this->env["APP_ENV"] = 'pro';
         $this->env["APP_KEY"] = env("APP_KEY"); // don't change app key when switching env
         $this->init();
+        return $this->output->writeLn("\n Silo environment has been set to Production \n");
     }
 
     /**

@@ -7,13 +7,13 @@
  * @license   MIT
  * @category  Framework
  * @copyright 2019 Lotfio Lakehal
- * 
+ *
  */
 
 class ApiController
 {
     public function index()
-    {
+    {a
         return array(
             "welcome" => "from API controller"
         );
