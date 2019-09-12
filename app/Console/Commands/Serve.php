@@ -16,6 +16,7 @@ namespace App\Console\Commands;
 use Conso\Command;
 use Conso\Contracts\CommandInterface;
 use Conso\Exceptions\{OptionNotFoundException, FlagNotFoundException};
+use OoFile\Conf;
 
 class Serve extends Command implements CommandInterface
 {
@@ -62,7 +63,7 @@ class Serve extends Command implements CommandInterface
          */
         $this->checkAvailablePort();
 
-        $command = "php -S " . $this->host . ":" . $this->port . " -t " . dirname(__DIR__, 3) . '/pub';
+        $command = "php -S " . $this->host . ":" . $this->port . " -t " . Conf::path('pub');
 
         $this->output->writeLn("\n Starting development server : \n", "yellow");
         $this->output->writeLn(" You can now visit <http://$this->host:$this->port> \n\n", "yellow");
