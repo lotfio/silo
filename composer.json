@@ -21,7 +21,8 @@
         ],
 
         "post-autoload-dump": [
-            "@php silo env:init"
+            "@php silo env:init",
+            "@php silo assets:publish"
         ]
     }
 }

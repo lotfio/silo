@@ -47,12 +47,19 @@ return array(
     **/
     "views"    => dirname(__DIR__) . "/app/extras/views/",
 
-     /**
+    /**
+    * + ----------------------------------
+    * | dump path
+    * + ----------------------------------
+    **/
+    "dump"    => dirname(__DIR__) . "/dump/",
+
+    /**
     * + ----------------------------------
     * | assets path
     * + ----------------------------------
     **/
-    "assets"    => dirname(__DIR__) . "/app/extras/assets/",
+    "assets"    => dirname(__DIR__) . "/dump/app/assets/",
 
     /**
     * + ----------------------------------
