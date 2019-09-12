@@ -18,6 +18,10 @@
     "scripts": {
         "post-create-project-cmd": [
             "@php -r \"copy('.env.example', '.env');\""
+        ],
+
+        "post-autoload-dump": [
+            "@php silo env:init"
         ]
     }
 }
