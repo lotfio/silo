@@ -1,6 +1,7 @@
 /vendor/
 /dump/cache/routes
 /dump/cache/views
+pub/assets
 composer.lock
 phpunit
 .idea
