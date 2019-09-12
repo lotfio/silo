@@ -7,11 +7,14 @@
  * @license   MIT
  * @category  Framework
  * @copyright 2019 Lotfio Lakehal
- * 
+ *
  */
 
 use App\Http\Kernel;
 
+/**
+ * autoload dependencies
+ */
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 /**
