@@ -59,5 +59,5 @@ return array(
     * | routes cache path
     * + ----------------------------------
     **/
-    "cache"     => dirname(__DIR__) . '/app/dump/cache/routes/'
+    "cache"     => dirname(__DIR__) . '/dump/cache/'
 );

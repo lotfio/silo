@@ -46,7 +46,7 @@ class Kernel
     {
         aven::config(array(
             "namespace" => Conf::app("namespace"),
-            "cache"     => Conf::path("cache")
+            "cache"     => Conf::path("cache") . 'routes'
         ));
 
         return require Conf::path("routes") . "web.php"; // load routes

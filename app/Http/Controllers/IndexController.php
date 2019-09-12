@@ -16,6 +16,6 @@ class IndexController
 {
     public function index()
     {
-        return require \OoFile\Conf::path('views') . 'index.view.php';
+       return require \OoFile\Conf::path('views') . 'index.view.php';
     }
 }

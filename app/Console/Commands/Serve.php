@@ -65,7 +65,7 @@ class Serve extends Command implements CommandInterface
         $command = "php -S " . $this->host . ":" . $this->port . " -t " . dirname(__DIR__, 3) . '/pub';
 
         $this->output->writeLn("\n Starting development server : \n", "yellow");
-        $this->output->writeLn(" You can now visit http://$this->host:$this->port \n\n", "yellow");
+        $this->output->writeLn(" You can now visit <http://$this->host:$this->port> \n\n", "yellow");
 
         return  passthru($command);
     }

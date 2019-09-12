@@ -7,7 +7,6 @@
  * @license   MIT
  * @category  Framework
  * @copyright 2019 Lotfio Lakehal
- * 
  */
 
 use Aven\Facades\Aven;

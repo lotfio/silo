@@ -13,7 +13,7 @@
 class ApiController
 {
     public function index()
-    {a
+    {
         return array(
             "welcome" => "from API controller"
         );
