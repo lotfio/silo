@@ -28,6 +28,15 @@ class Env extends Command implements CommandInterface
     protected $flags = [];
 
     /**
+     * environment values
+     *
+     * @var array
+     */
+    private $env = array(
+
+    );
+
+    /**
      * command description method
      *
      * @return string
@@ -46,21 +55,37 @@ class Env extends Command implements CommandInterface
     {
         switch($sub)
         {
-            case 'init' : $this->initEnv(); break;
+            case 'init' : $this->generateAppKey(); $this->init(); break;
             case 'dev'  : $this->setDevelopmentMode(); break;
             case 'pro'  : $this->setProductionMode(); break;
-            default     : $this->output->writeLn("\n Your application environment is set to " . env("APP_ENV") . "\n"); break;
+            default     : $this->output->writeLn("\n Your application environment is set to ");
+                        env('APP_ENV') == 'dev' ?
+                            $this->output->writeLn("Development\n", 'green')
+                        :   $this->output->writeLn("Production\n", 'green');
+            break;
         }
     }
 
-    private function initEnv()
+    /**
+     * env init method
+     *
+     * @return void
+     */
+    private function init()
     {
         $dotEnv = new DotEnv;
-        $dotEnv->init(array(
-            "APP_KEY" => SHA1(SHA1(uniqid()))
-        ));
+        $dotEnv->init($this->env);
+        return $this->output->writeLn("\n Silo environment has been initialized \n");
+    }
 
-        return $this->output->writeLn("\n Silo envirenment has been initialized \n");
+    /**
+     * generate app key method
+     *
+     * @return void
+     */
+    private function generateAppKey()
+    {
+        $this->env["APP_KEY"] = 'base64-' . base64_encode(md5(time()));
     }
 
     /**
@@ -70,7 +95,9 @@ class Env extends Command implements CommandInterface
      */
     private function setDevelopmentMode()
     {
-
+        $this->env["APP_ENV"] = 'dev';
+        $this->env["APP_KEY"] = env("APP_KEY"); // don't change app key when switching env
+        return     $this->init();
     }
 
     /**
@@ -80,7 +107,9 @@ class Env extends Command implements CommandInterface
      */
     private function setProductionMode()
     {
-
+        $this->env["APP_ENV"] = 'pro';
+        $this->env["APP_KEY"] = env("APP_KEY"); // don't change app key when switching env
+        $this->init();
     }
 
     /**
