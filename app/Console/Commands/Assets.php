@@ -49,7 +49,7 @@ class Assets extends Command implements CommandInterface
             switch($sub)
             {
                 case 'publish'  : $this->publishAssets();  exit; break;
-                default         : throw new RunTimeException("Error sub command $sub not recognized"); break; break;
+                default         : throw new RunTimeException("Error sub command $sub not recognized"); break;
             }
         }
 
@@ -63,8 +63,20 @@ class Assets extends Command implements CommandInterface
      */
     private function publishAssets()
     {
-        chdir(Conf::path('pub')); // switch to public folder
-        symlink(Conf::path('assets'), "assets"); // create a symlink
+        $assets = Conf::path('assets');
+        $pub    = Conf::path('pub');
+
+        if(!is_writable($pub))
+            throw new RunTimeException("$pub Directory is not writable ");
+
+        chdir($pub); // switch to public folder
+
+        if(is_link('assets')) rmdir('assets');
+
+        if(symlink($assets, "assets"))
+            return $this->output->writeLn("\n assets has been published to the public folder.\n", "green");
+
+        throw new RunTimeException("\nerror publishing assets to public folder.\n", "red");
     }
 
     /**
