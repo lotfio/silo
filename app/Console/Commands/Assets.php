@@ -32,7 +32,7 @@ class Assets extends Command implements CommandInterface
      *
      * @return string
      */
-    protected $description = "Assets command description.";
+    protected $description = "Assets command to publish, delete, update assets.";
 
     /**
      * command execute method
@@ -49,7 +49,7 @@ class Assets extends Command implements CommandInterface
             switch($sub)
             {
                 case 'publish'  : $this->publishAssets();  exit; break;
-                default         : throw new RunTimeException("Error sub command $sub not recognized"); break;
+                default         : throw new RunTimeException("Error sub command $sub not recognized\n\n"); break;
             }
         }
 
@@ -67,21 +67,50 @@ class Assets extends Command implements CommandInterface
         $pub    = Conf::path('pub');
 
         if(!is_writable($pub))
-            throw new RunTimeException("$pub Directory is not writable ");
+            throw new RunTimeException("$pub Directory is not writable \n\n");
 
         chdir($pub); // switch to public folder
-        if(is_link('assets')) rmdir("assets");
+
+        if(is_link("assets"))
+            system("rmdir assets");
 
         if(symlink($assets, "assets"))
-            return $this->output->writeLn("\n assets has been published to the public folder.\n", "green");
+            return $this->output->writeLn("\n assets has been published to the public folder.\n\n", "green");
 
-        throw new RunTimeException("\error publishing assets to public folder.\n", "red");
+        throw new RunTimeException("\error publishing assets to public folder.\n\n", "red");
     }
 
     /**
-     * command help method
+     * delete tree method
+     *
+     * @param  string $dir
+     * @return void
+     */
+    private function delTree($dir)
+    { 
+        $files = array_diff(scandir($dir), array('.', '..')); 
+
+        foreach ($files as $file) { 
+            (is_dir("$dir/$file")) ? $this->delTree("$dir/$file") : unlink("$dir/$file"); 
+        }
+
+        return rmdir($dir); 
+    } 
+
+    /**
+     * command help method.
      *
      * @return string
      */
-    public function help() { return "Assets command help.";}
+    public function help()
+    {
+        $this->output->writeLn("\n [ assets ] \n\n", 'yellow');
+        $this->output->writeLn("   assets command.\n\n");
+        $this->output->writeLn("  sub commands : \n\n", 'yellow');
+        $this->output->writeLn("    publish  :  create a symlink to assets on the public filder.\n\n");
+        $this->output->writeLn("  options : \n\n", 'yellow');
+        $this->output->writeLn("    no options for this command.\n\n");
+
+        return '';
+    }
 }

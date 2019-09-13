@@ -46,7 +46,7 @@ class Serve extends Command implements CommandInterface
      *
      * @return string
      */
-    protected $description = "Serve command description.";
+    protected $description = "Serve command to start the build in php server.";
 
     /**
      * command execute method
@@ -94,9 +94,19 @@ class Serve extends Command implements CommandInterface
     }
 
     /**
-     * command help method
+     * command help method.
      *
      * @return string
      */
-    public function help() { return "Serve command help.";}
+    public function help()
+    {
+        $this->output->writeLn("\n [ serve ] \n\n", 'yellow');
+        $this->output->writeLn("   serve command to start the build in php server.\n\n");
+        $this->output->writeLn("  sub commands : \n\n", 'yellow');
+        $this->output->writeLn("    no sub comands for this command.\n\n");
+        $this->output->writeLn("  options : \n\n", 'yellow');
+        $this->output->writeLn("    no options for this command.\n\n");
+
+        return '';
+    }
 }
