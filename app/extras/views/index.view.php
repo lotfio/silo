@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SILO | WELCOME</title>
 
-    <link rel="shortcut icon" type="image/png" href="http://<?=$_SERVER['HTTP_HOST']?>/favicon.ico">
-    <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/assets/css/spectre.min.css">
+    <link rel="shortcut icon" type="image/png" href="<?=url('favicon.ico')?>">
+    <link rel="stylesheet" href="<?=url('/assets/css/spectre.min.css')?>">
     <!-- spectre css -->
     <style>
         html {
@@ -82,7 +82,6 @@
         .logo {
             background: radial-gradient(circle at center, #f2f2f2 0, transparent 20%);
             padding: 20px 0px 1px 0px;
-            margin-bottom: 50px;
         }
         header .logo span {
             font-size: 20px;
@@ -104,7 +103,7 @@
 <div class="container grid-xl mt-2">
 
     <div class="label hide-sm mt-2 float-left">
-            <b>Current branch: </b> <span> master</span>
+            <b>Git: </b> <span> master</span>
     </div>
 
     <div class="label mt-2 float-right">
@@ -118,11 +117,11 @@
             <div class="columns">
                 <div class="column col-12">
                     <div class="logo">
-                        <img src="http://<?=$_SERVER['HTTP_HOST']?>/favicon.ico" height="100">
+                        <img src="<?=url('favicon.ico')?>" height="100">
                         <h1>Silo</h1>
                         <span>Framework</span>
                     </div>
-                    <p>Thanks for choosing Silo !</p>
+                    <p style="margin-bottom:0">Thanks for choosing Silo !</p>
                 </div>
             </div>
         </header>

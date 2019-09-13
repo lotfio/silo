@@ -12,7 +12,10 @@
     "autoload": {
         "psr-4": {
             "App\\" : "app/"
-        }
+        },
+        "files": [
+            "supp/helpers.php"
+        ]
     },
 
     "scripts": {
