@@ -31,7 +31,7 @@ return array(
     * | Cli application name
     * + ----------------------------------
     **/
-    "APP_LOGO_FILE"     => dirname(__DIR__) . '/app/Console/stub/logo',
+    "APP_LOGO_FILE"     => dirname(__DIR__) . '/vendor/lotfio/omniscient/src/Console/stub/logo',
 
     /**
     * + ----------------------------------
@@ -57,6 +57,7 @@ return array(
     'COMMANDS' => array(
         dirname(__DIR__) . '/vendor/lotfio/conso/src/Conso/Commands/',
         dirname(__DIR__) . '/vendor/lotfio/aven/src/Aven/Console/Commands/',
+        dirname(__DIR__) . '/vendor/lotfio/omniscient/src/Console/Commands',
         dirname(__DIR__) . '/app/Console/Commands/', 
     ),
 
@@ -69,6 +70,7 @@ return array(
     'NAMESPACE' => array(
         'Conso\\Commands\\',
         'Aven\\Console\\Commands\\',
+        'Omniscient\\Console\\Commands',
         'App\\Console\\Commands\\'
     )
 );
