@@ -45,7 +45,7 @@ class Kernel
     public function loadWebRoutes()
     {
         aven::config(array(
-            "namespace" => Conf::app("namespace"),
+            "namespace" => Conf::namespace("controllers"),
             "cache"     => Conf::path("cache") . 'routes'
         ));
 

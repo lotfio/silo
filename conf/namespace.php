@@ -17,4 +17,5 @@ return array(
     * | controllers namespace
     * + ----------------------------------
     **/
+    "controllers" => "App\\Http\\Controllers\\",
 );
