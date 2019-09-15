@@ -7,8 +7,14 @@
  * @license   MIT
  * @category  Framework
  * @copyright 2019 Lotfio Lakehal
- * 
+ *
  */
+//TODO this can be moved to service suppliers
+$dir        = dirname(__DIR__);
+$conso      = $dir . '/vendor/lotfio/conso/src/Conso/';
+$aven       = $dir . '/vendor/lotfio/aven/src/Aven/';
+$omniscient = $dir . '/vendor/lotfio/omniscient/src/';
+$silo       = $dir . '/app/';
 
 return array(
 
@@ -31,7 +37,7 @@ return array(
     * | Cli application name
     * + ----------------------------------
     **/
-    "APP_LOGO_FILE"     => dirname(__DIR__) . '/vendor/lotfio/omniscient/src/Console/stub/logo',
+    "APP_LOGO_FILE"     => $omniscient . 'Console/stub/logo',
 
     /**
     * + ----------------------------------
@@ -55,22 +61,22 @@ return array(
     * + ----------------------------------
     **/
     'COMMANDS' => array(
-        dirname(__DIR__) . '/vendor/lotfio/conso/src/Conso/Commands/',
-        dirname(__DIR__) . '/vendor/lotfio/aven/src/Aven/Console/Commands/',
-        dirname(__DIR__) . '/vendor/lotfio/omniscient/src/Console/Commands',
-        dirname(__DIR__) . '/app/Console/Commands/', 
+        $conso      . 'Commands/',
+        $aven       . 'Console/Commands/',
+        $omniscient . 'Console/Commands',
+        $silo       . 'Console/Commands/',
     ),
 
     /**
     * + ----------------------------------
-    * | commands namespaces 
+    * | commands namespaces
     * | must follow commands paths order
     * + ----------------------------------
     **/
     'NAMESPACE' => array(
-        'Conso\\Commands\\',
-        'Aven\\Console\\Commands\\',
+        'Conso\\Commands',
+        'Aven\\Console\\Commands',
         'Omniscient\\Console\\Commands',
-        'App\\Console\\Commands\\'
+        'App\\Console\\Commands'
     )
 );
