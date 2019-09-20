@@ -52,19 +52,33 @@ return array(
     * | dump path
     * + ----------------------------------
     **/
-    "dump"    => dirname(__DIR__) . "/dump/",
+    "dump"     => dirname(__DIR__) . "/dump/",
 
     /**
     * + ----------------------------------
     * | assets path
     * + ----------------------------------
     **/
-    "assets"    => dirname(__DIR__) . "/dump/app/assets/",
+    "assets"   => dirname(__DIR__) . "/dump/app/assets/",
 
     /**
     * + ----------------------------------
-    * | routes cache path
+    * | cache path
     * + ----------------------------------
     **/
-    "cache"     => dirname(__DIR__) . '/dump/cache/'
+    "cache"    => dirname(__DIR__) . '/dump/cache/',
+
+    /**
+    * + ----------------------------------
+    * | controllers  path
+    * + ----------------------------------
+    **/
+    "controllers"  => dirname(__DIR__) . '/app/Http/Controllers/',
+
+    /**
+    * + ----------------------------------
+    * | commands  path
+    * + ----------------------------------
+    **/
+    "commands"     => dirname(__DIR__) . '/app/Console/Commands/'
 );
