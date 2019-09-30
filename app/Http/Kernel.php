@@ -21,10 +21,11 @@ class Kernel
      *
      * @return void
      */
-    public function enableErrorHandler()
+    public function bindOuchHandler()
     {
         $ouch = new Ouch;
         $ouch->enableErrorHandler(env('APP_ENV', 'pro'));
+        return $this;
     }
 
     /**
@@ -34,7 +35,8 @@ class Kernel
      */
     public function loadConfig()
     {
-        return Conf::add(dirname(__DIR__,2) . DIRECTORY_SEPARATOR . 'conf/');
+        Conf::add(dirname(__DIR__,2) . DIRECTORY_SEPARATOR . 'conf/');
+        return $this;
     }
 
     /**
@@ -49,7 +51,8 @@ class Kernel
             "cache"     => Conf::path("cache") . 'routes'
         ));
 
-        return require Conf::path("routes") . "web.php"; // load routes
+        require Conf::path("routes") . "web.php"; // load routes
+        return $this;
     }
 
     /**
@@ -59,7 +62,18 @@ class Kernel
      */
     public function loadApiRoutes()
     {
-        return require Conf::path("routes") . "api.php"; // load routes
+        require Conf::path("routes") . "api.php"; // load routes
+        return $this;
+    }
+
+    /**
+     * caprice templating engine bind
+     *
+     * @return void
+     */
+    public function bindCaprice()
+    {
+        return $this;
     }
 
     /**
@@ -67,6 +81,11 @@ class Kernel
      */
     public function bind()
     {
+        $this->bindOuchHandler()
+             ->loadConfig()
+             ->loadWebRoutes()
+             ->loadApiRoutes()
+             ->bindCaprice();
         return Aven::init();
     }
 }
