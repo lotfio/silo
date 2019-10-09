@@ -4,6 +4,7 @@
 pub/assets
 composer.lock
 phpunit
+*.cache
 .idea
 .vscode
 .env
