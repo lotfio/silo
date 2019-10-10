@@ -20,35 +20,35 @@ return array(
 
     /**
     * + ----------------------------------
-    * | Cli application name
+    * | app name
     * + ----------------------------------
     **/
     "APP_NAME"          => env('APP_NAME'),
 
     /**
     * + ----------------------------------
-    * | Cli application name
+    * | app version
     * + ----------------------------------
     **/
     "APP_VERSION"       => env('APP_VERSION'),
 
     /**
     * + ----------------------------------
-    * | Cli application name
+    * | console app logo
     * + ----------------------------------
     **/
     "APP_LOGO_FILE"     => $omniscient . 'Console/stub/logo',
 
     /**
     * + ----------------------------------
-    * | Cli application name
+    * | app release date
     * + ----------------------------------
     **/
     "APP_RELEASE_DATE"  => "9-11-2019 by lotfio lakehal",
 
     /**
     * + ----------------------------------
-    * | Cli application name
+    * | console app default command
     * + ----------------------------------
     **/
     "DEFAULT_COMMAND"   => "Info",

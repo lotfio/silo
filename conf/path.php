@@ -10,6 +10,8 @@
  *
  */
 
+$root = dirname(__DIR__);
+
 return array(
 
     /**
@@ -17,68 +19,68 @@ return array(
     * | base path
     * + ----------------------------------
     **/
-    "root"      => dirname(__DIR__) .'/',
+    "root"      => $root .'/',
 
     /**
     * + ----------------------------------
     * | base path
     * + ----------------------------------
     **/
-    "app"      => dirname(__DIR__) . '/app/',
+    "app"      => $root . '/app/',
 
     /**
     * + ----------------------------------
     * | base path
     * + ----------------------------------
     **/
-    "pub"      => dirname(__DIR__) . '/pub/',
+    "pub"      => $root . '/pub/',
 
     /**
     * + ----------------------------------
     * | routes path
     * + ----------------------------------
     **/
-    "routes"    => dirname(__DIR__) . "/app/extras/routes/",
+    "routes"    => $root . "/app/extras/routes/",
 
     /**
     * + ----------------------------------
     * | views path
     * + ----------------------------------
     **/
-    "views"    => dirname(__DIR__) . "/app/extras/views/",
+    "views"    => $root . "/app/extras/views/",
 
     /**
     * + ----------------------------------
     * | dump path
     * + ----------------------------------
     **/
-    "dump"     => dirname(__DIR__) . "/dump/",
+    "dump"     => $root . "/dump/",
 
     /**
     * + ----------------------------------
     * | assets path
     * + ----------------------------------
     **/
-    "assets"   => dirname(__DIR__) . "/dump/app/assets/",
+    "assets"   => $root . "/dump/app/assets/",
 
     /**
     * + ----------------------------------
     * | cache path
     * + ----------------------------------
     **/
-    "cache"    => dirname(__DIR__) . '/dump/cache/',
+    "cache"    => $root . '/dump/cache/',
 
     /**
     * + ----------------------------------
     * | controllers  path
     * + ----------------------------------
     **/
-    "controllers"  => dirname(__DIR__) . '/app/Http/Controllers/',
+    "controllers"  => $root . '/app/Http/Controllers/',
 
     /**
     * + ----------------------------------
     * | commands  path
     * + ----------------------------------
     **/
-    "commands"     => dirname(__DIR__) . '/app/Console/Commands/'
+    "commands"     => $root . '/app/Console/Commands/'
 );
