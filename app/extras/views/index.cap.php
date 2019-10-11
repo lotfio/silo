@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SILO | WELCOME</title>
+    <title>(= env("APP_NAME") =) | (= "WELCOME" =)</title>
 
     <link rel="shortcut icon" type="image/png" href="<?=url('favicon.ico')?>">
     <link rel="stylesheet" href="<?=url('/assets/css/spectre.min.css')?>">
@@ -117,9 +117,9 @@
             <div class="columns">
                 <div class="column col-12">
                     <div class="logo">
-                        <img src="<?=url('favicon.ico')?>" height="100">
-                        <h1>Silo</h1>
-                        <span>Framework</span>
+                        <img src="(= url('favicon.ico') =)" height="100">
+                        <h1>(= "SILO " =)</h1>
+                        <span>(= "Framework" =)</span>
                     </div>
                     <p style="margin-bottom:0">Thanks for choosing Silo !</p>
                 </div>
