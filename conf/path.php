@@ -40,35 +40,35 @@ return array(
     * | routes path
     * + ----------------------------------
     **/
-    "routes"    => $root . "/app/extras/routes/",
+    "routes"    => $root . "/res/routes/",
 
     /**
     * + ----------------------------------
     * | views path
     * + ----------------------------------
     **/
-    "views"    => $root . "/app/extras/views/",
+    "views"    => $root . "/res/views/",
 
     /**
     * + ----------------------------------
     * | dump path
     * + ----------------------------------
     **/
-    "dump"     => $root . "/dump/",
+    "dump"     => $root . "/dmp/",
 
     /**
     * + ----------------------------------
     * | assets path
     * + ----------------------------------
     **/
-    "assets"   => $root . "/dump/app/assets/",
+    "assets"   => $root . "/dmp/app/assets/",
 
     /**
     * + ----------------------------------
     * | cache path
     * + ----------------------------------
     **/
-    "cache"    => $root . '/dump/cache/',
+    "cache"    => $root . '/dmp/cache/',
 
     /**
     * + ----------------------------------
