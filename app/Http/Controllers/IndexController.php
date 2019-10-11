@@ -1,7 +1,5 @@
 <?php namespace App\Http\Controllers;
 
-use OoFile\Conf;
-
 /**
  * @author    <contact@lotfio.net>
  * @package   Silo PHP framework
@@ -16,6 +14,6 @@ class IndexController
 {
     public function index()
     {
-        require \OoFile\Conf::path('views') . 'index.view.php';
+        return view("index.cap.php");
     }
 }
