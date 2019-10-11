@@ -1,6 +1,6 @@
 /vendor/
-/dump/cache/routes
-/dump/cache/views
+/dmp/cache/routes
+/dmp/cache/views
 pub/assets
 composer.lock
 phpunit
