@@ -8,7 +8,7 @@
         "lotfio/ouch"        : "dev-develop",
         "lotfio/oofile"      : "^0.1",
         "lotfio/conso"       : "^0.2",
-        "lotfio/caprice"     : "^0.1"
+        "lotfio/caprice"     : "^0.2"
     },
     
     "require-dev": {
