@@ -38,5 +38,5 @@ return array(
     * | site port
     * + ----------------------------------
     **/
-    "port"    => $_SERVER['HTTP_port'] ?? env('APP_PORT', '80'),
+    "port"    => $_SERVER['HTTP_PORT'] ?? env('APP_PORT', '80'),
 );
