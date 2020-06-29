@@ -3,12 +3,7 @@
     "description": "fast for lazy devs",
 
     "require": {
-        "lotfio/omniscient"  : "dev-develop",
-        "lotfio/aven"        : "dev-develop",
-        "lotfio/ouch"        : "dev-develop",
-        "lotfio/oofile"      : "^0.1",
-        "lotfio/conso"       : "^0.2",
-        "lotfio/caprice"     : "^0.3"
+        "lotfio/omniscient"  : "dev-develop"
     },
     
     "require-dev": {
