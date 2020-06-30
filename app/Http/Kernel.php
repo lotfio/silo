@@ -12,19 +12,29 @@
 
 use OoFile\Conf;
 use Ouch\Ouch;
-use Aven\Facades\Aven;
 
 class Kernel
 {
+    /**
+     * router instance
+     *
+     * @var Aven\Router
+     */
+    protected $silo;
+
+
+    public function __construct()
+    {
+        $this->silo =  new \Aven\Router($_SERVER['REQUEST_URI'] ?? '/');
+    }
     /**
      * enable ouch error handler method
      *
      * @return void
      */
-    public function bindOuchHandler()
+    public function setErrorHandler()
     {
-        $ouch = new Ouch;
-        $ouch->enableErrorHandler(env('APP_ENV', 'pro'));
+        (new Ouch)->enableErrorHandler(env('APP_ENV', 'pro'));
         return $this;
     }
 
@@ -46,11 +56,7 @@ class Kernel
      */
     public function loadWebRoutes()
     {
-        aven::config(array(
-            "namespace" => Conf::namespace("controllers"),
-            "cache"     => Conf::path("cache") . 'routes'
-        ));
-
+        $silo = $this->silo;
         require Conf::path("routes") . "web.php"; // load routes
         return $this;
     }
@@ -62,17 +68,8 @@ class Kernel
      */
     public function loadApiRoutes()
     {
+        $silo = $this->silo;
         require Conf::path("routes") . "api.php"; // load routes
-        return $this;
-    }
-
-    /**
-     * caprice templating engine bind
-     *
-     * @return void
-     */
-    public function bindCaprice()
-    {
         return $this;
     }
 
@@ -81,11 +78,7 @@ class Kernel
      */
     public function bind()
     {
-        $this->bindOuchHandler()
-             ->loadConfig()
-             ->loadWebRoutes()
-             ->loadApiRoutes()
-             ->bindCaprice();
-        return Aven::init();
+        $this->setErrorHandler()->loadConfig()->loadWebRoutes();
+        return $this->silo->init();
     }
 }
