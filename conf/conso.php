@@ -12,7 +12,6 @@
 //TODO this can be moved to service suppliers
 $dir        = dirname(__DIR__);
 $conso      = $dir . '/vendor/lotfio/conso/src/Conso/';
-$aven       = $dir . '/vendor/lotfio/aven/src/Aven/';
 $omniscient = $dir . '/vendor/lotfio/omniscient/src/';
 $silo       = $dir . '/app/';
 
@@ -62,7 +61,6 @@ return array(
     **/
     'COMMANDS' => array(
         $conso      . 'Commands/',
-        $aven       . 'Console/Commands/',
         $omniscient . 'Console/Commands',
         $silo       . 'Console/Commands/',
     ),
@@ -75,7 +73,6 @@ return array(
     **/
     'NAMESPACE' => array(
         'Conso\\Commands',
-        'Aven\\Console\\Commands',
         'Omniscient\\Console\\Commands',
         'App\\Console\\Commands'
     )
