@@ -11,6 +11,7 @@
  */
 
 use App\Http\Kernel;
+use App\Console\Kernel as ConsoleKernel;
 
 /**
  * autoload dependencies
@@ -20,7 +21,7 @@ require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 /**
  * load http kernel
  */
-$httpKernel = new Kernel;
+$httpKernel = (php_sapi_name() == 'cli') ? new ConsoleKernel : new Kernel;
 
 /**
  * bind kernel and load modules
