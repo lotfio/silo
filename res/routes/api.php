@@ -7,10 +7,7 @@
  * @license   MIT
  * @category  Framework
  * @copyright 2019 Lotfio Lakehal
- * 
+ *
  */
 
-use Aven\Facades\Aven;
-
-
-Aven::get("/api", "ApiController@index");
+$silo->get("/api", "ApiController@index");

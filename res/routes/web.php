@@ -9,7 +9,6 @@
  * @copyright 2019 Lotfio Lakehal
  */
 
-use Aven\Facades\Aven;
-
-
-Aven::get("/", "IndexController@index");
+$silo->get("/", function() use ($silo) {
+    return view('index.cap.php');
+});
