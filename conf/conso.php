@@ -22,14 +22,14 @@ return array(
     * | app name
     * + ----------------------------------
     **/
-    "APP_NAME"          => env('APP_NAME'),
+    "APP_NAME"          => _env('APP_NAME'),
 
     /**
     * + ----------------------------------
     * | app version
     * + ----------------------------------
     **/
-    "APP_VERSION"       => env('APP_VERSION'),
+    "APP_VERSION"       => _env('APP_VERSION'),
 
     /**
     * + ----------------------------------

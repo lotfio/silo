@@ -7,7 +7,7 @@
  * @license   MIT
  * @category  Framework
  * @copyright 2019 Lotfio Lakehal
- * 
+ *
  */
 
 return array(
@@ -17,40 +17,40 @@ return array(
     * | database driver
     * + ----------------------------------
     **/
-    "driver"    => env("DB_DRIVER"),
+    "driver"    => _env("DB_DRIVER"),
 
     /**
     * + ----------------------------------
     * | database port
     * + ----------------------------------
     **/
-    "port"      => env("DB_PORT"),
+    "port"      => _env("DB_PORT"),
 
     /**
     * + ----------------------------------
     * | database host
     * + ----------------------------------
     **/
-    "host"      => env("DB_ HOST"),
+    "host"      => _env("DB_ HOST"),
 
     /**
     * + ----------------------------------
     * | database name
     * + ----------------------------------
     **/
-    "name"      => env("DB_NAME"),
+    "name"      => _env("DB_NAME"),
 
     /**
     * + ----------------------------------
     * | database user
     * + ----------------------------------
     **/
-    "user"      => env("DB_USER"),
+    "user"      => _env("DB_USER"),
 
     /**
     * + ----------------------------------
     * | database password
     * + ----------------------------------
     **/
-    "pass"      => env("DB_PASS"),
+    "pass"      => _env("DB_PASS"),
 );

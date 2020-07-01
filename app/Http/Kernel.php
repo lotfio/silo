@@ -34,7 +34,7 @@ class Kernel
      */
     public function setErrorHandler()
     {
-        (new Ouch)->enableErrorHandler(env('APP_ENV', 'pro'));
+        (new Ouch)->enableErrorHandler(_env('APP_ENV', 'pro'));
         return $this;
     }
 
@@ -45,7 +45,7 @@ class Kernel
      */
     public function loadConfig()
     {
-        Conf::add(dirname(__DIR__,2) . DIRECTORY_SEPARATOR . 'conf/');
+        Conf::loadDir(dirname(__DIR__,2) . DIRECTORY_SEPARATOR . 'conf/');
         return $this;
     }
 
