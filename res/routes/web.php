@@ -9,6 +9,6 @@
  * @copyright 2019 Lotfio Lakehal
  */
 
-$silo->get("/", function() use ($silo) {
-    return view('index.cap.php');
+$silo->namespace('App\Http\Controllers', function($silo){
+    $silo->get('/', 'IndexController@index');
 });
