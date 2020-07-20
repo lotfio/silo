@@ -2,12 +2,62 @@
     "name": "lotfio/silo",
     "description": "fast for lazy devs",
 
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "packagist.org": false
+        },
+        {
+            "type": "path",
+            "url": "C:\\Users\\dell\\Desktop\\own\\silo\\lotfio-omniscient",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "C:\\Users\\dell\\Desktop\\own\\silo\\lotfio-oofile",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "C:\\Users\\dell\\Desktop\\own\\silo\\lotfio-ouch",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "C:\\Users\\dell\\Desktop\\own\\silo\\lotfio-aven",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "C:\\Users\\dell\\Desktop\\own\\silo\\lotfio-conso",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "C:\\Users\\dell\\Desktop\\own\\silo\\lotfio-caprice",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+
     "require": {
-        "lotfio/omniscient"  : "dev-develop"
-    },
-    
-    "require-dev": {
-        "phpunit/phpunit" : "^8.0"
+        "lotfio/omniscient"  : "dev-local",
+        "lotfio/oofile"      : "dev-local",
+        "lotfio/ouch"        : "dev-local",
+        "lotfio/aven"        : "dev-local",
+        "lotfio/conso"       : "dev-local",
+        "lotfio/caprice"     : "dev-local"
     },
 
     "autoload": {

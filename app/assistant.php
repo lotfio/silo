@@ -16,7 +16,7 @@ use App\Console\Kernel as ConsoleKernel;
 /**
  * autoload dependencies
  */
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
 
 /**
  * load http kernel

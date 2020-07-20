@@ -22,7 +22,8 @@ return array(
     **/
     'commands' => array(
 
-        "conso" => $dir . $vndr  . 'conso/commands.php',
-        "silo"  => $dir          . '/res/routes/commands.php'
+        "conso"         => $dir . $vndr  . 'conso/commands.php',
+        "omniscient"    => $dir . $vndr  . 'omniscient/src/Console/commands.php',
+        "silo"          => $dir          . 'res/routes/commands.php',
     )
 );

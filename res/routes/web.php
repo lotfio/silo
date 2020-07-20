@@ -1,7 +1,5 @@
 <?php
 
-use OoFile\Upload;
-
 /**
  * @author    <contact@lotfio.net>
  * @package   Silo PHP framework
@@ -11,21 +9,8 @@ use OoFile\Upload;
  * @copyright 2019 Lotfio Lakehal
  */
 
-$silo->namespace('App\Http\Controllers', function($silo){
-    $silo->crud('/algeria', 'Algeria');
-});
+ $silo->namespace("App\\Http\\Controllers", function($silo){
 
-$silo->form('/upload', function(){
+    $silo->get('/', 'IndexController@index');
 
-    echo '<form action="" method="POST" enctype="multipart/form-data">
-         <input name="image[]" type="file" multiple>
-         <button type="submit">upload</button>
-         </form>';
-
-
-    if(($_FILES))
-    {
-        $up = new Upload('image', __DIR__);
-        if($up->isValid()) $up->proceed();
-    }
-});
+ });

@@ -61,7 +61,7 @@ class Kernel
         $silo->setCommandsPath(__DIR__ . '/app/Console/Commands');
         $silo->setCommandsNamespace("App\\Console\\Commands");
         $silo->setName("Silo");
-        $silo->setVersion(_env('APP_VERSION'));
+        $silo->setVersion(_env('APP_VERSION', ''));
 
         // load commands
         foreach(Conf::conso('commands') as $command)
