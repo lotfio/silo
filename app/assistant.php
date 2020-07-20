@@ -21,9 +21,9 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 /**
  * load http kernel
  */
-$httpKernel = (php_sapi_name() == 'cli') ? new ConsoleKernel : new Kernel;
+$kernel = (php_sapi_name() == 'cli') ? new ConsoleKernel : new Kernel;
 
 /**
  * bind kernel and load modules
  */
-$httpKernel->bind();
+$kernel->boot();

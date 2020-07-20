@@ -11,19 +11,43 @@
  */
 //TODO this can be moved to service suppliers
 $dir        = dirname(__DIR__) . '/';
-$vndr       = 'vendor/lotfio/';
+$vndr       = $dir . 'vendor/lotfio/';
 
 return array(
 
     /**
     * + ----------------------------------
-    * | conso commands routes
+    * | signature
+    * + ----------------------------------
+    **/
+    "signature" => $vndr . 'omniscient/src/Console/stub/logo',
+
+    /**
+    * + ----------------------------------
+    * | commands
     * + ----------------------------------
     **/
     'commands' => array(
 
-        "conso"         => $dir . $vndr  . 'conso/commands.php',
-        "omniscient"    => $dir . $vndr  . 'omniscient/src/Console/commands.php',
-        "silo"          => $dir          . 'res/routes/commands.php',
+        /**
+        * + ----------------------------------
+        * | default conso commands
+        * + ----------------------------------
+        **/
+        "conso"         => $vndr  . 'conso/commands.php',
+
+        /**
+        * + ----------------------------------
+        * | core commands
+        * + ----------------------------------
+        **/
+        "omniscient"    => $vndr  . 'omniscient/src/Console/commands.php',
+
+        /**
+        * + ----------------------------------
+        * | user defined commands
+        * + ----------------------------------
+        **/
+        "silo"          => $dir   . 'res/routes/commands.php',
     )
 );

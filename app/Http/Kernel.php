@@ -22,17 +22,20 @@ class Kernel
      */
     protected $silo;
 
-
+    /**
+     * set up http router
+     */
     public function __construct()
     {
         $this->silo =  new \Aven\Router($_SERVER['REQUEST_URI'] ?? '/');
     }
+
     /**
      * enable ouch error handler method
      *
      * @return void
      */
-    public function setErrorHandler()
+    public function setErrorHandler() : self
     {
         (new Ouch)->enableErrorHandler(_env('APP_ENV', 'pro'));
         return $this;
@@ -43,7 +46,7 @@ class Kernel
      *
      * @return void
      */
-    public function loadConfig()
+    public function loadConfig() : self
     {
         Conf::loadDir(dirname(__DIR__,2) . DIRECTORY_SEPARATOR . 'conf/');
         return $this;
@@ -54,7 +57,7 @@ class Kernel
      *
      * @return void
      */
-    public function loadWebRoutes()
+    public function loadWebRoutes() : self
     {
         $silo  = $this->silo;
         require_once Conf::path("routes") . "web.php"; // load routes
@@ -66,7 +69,7 @@ class Kernel
      *
      * @return void
      */
-    public function loadApiRoutes()
+    public function loadApiRoutes() : self
     {
         $silo  = $this->silo;
         require_once Conf::path("routes") . "api.php"; // load routes
@@ -76,9 +79,10 @@ class Kernel
     /**
      * bind aven router
      */
-    public function bind()
+    public function boot()
     {
-        $this->setErrorHandler()->loadConfig()->loadWebRoutes();
-        return $this->silo->init();
+        $this->setErrorHandler()->loadConfig()
+             ->loadWebRoutes()->loadApiRoutes();
+        $this->silo->init();
     }
 }

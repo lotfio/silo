@@ -18,7 +18,6 @@ use Conso\{
 
 class Kernel
 {
-
     /**
      * enable ouch error handler method
      *
@@ -50,14 +49,7 @@ class Kernel
     {
         $silo = $conso = new Conso(new Input, new Output);
 
-        $silo->setSignature("
- ..####...######..##.......####..
- .##........##....##......##..##.
- ..####.....##....##......##..##.
- .....##....##....##......##..##.
- ..####...######..######...####..
-");
-
+        $silo->setSignature(file_get_contents(Conf::conso('signature')));
         $silo->setCommandsPath(__DIR__ . '/app/Console/Commands');
         $silo->setCommandsNamespace("App\\Console\\Commands");
         $silo->setName("Silo");
@@ -75,8 +67,8 @@ class Kernel
     /**
      * bind aven router
      */
-    public function bind()
+    public function boot()
     {
-        return $this->setErrorHandler()->loadConfig()->loadConsoleCommands();
+        $this->setErrorHandler()->loadConfig()->loadConsoleCommands();
     }
 }
