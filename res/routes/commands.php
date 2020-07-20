@@ -1,5 +1,4 @@
-#!/usr/bin/env php
-<?php  declare(strict_types=1);
+<?php
 
 /**
  * @author    <contact@lotfio.net>
@@ -11,6 +10,4 @@
  *
  */
 
-require 'vendor/autoload.php';
-
-require 'app/assistant.php';
+$silo->command('hello', "App\\Console\\Commands\\Hello");

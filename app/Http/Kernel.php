@@ -56,8 +56,8 @@ class Kernel
      */
     public function loadWebRoutes()
     {
-        $silo = $this->silo;
-        require Conf::path("routes") . "web.php"; // load routes
+        $silo  = $this->silo;
+        require_once Conf::path("routes") . "web.php"; // load routes
         return $this;
     }
 
@@ -68,8 +68,8 @@ class Kernel
      */
     public function loadApiRoutes()
     {
-        $silo = $this->silo;
-        require Conf::path("routes") . "api.php"; // load routes
+        $silo  = $this->silo;
+        require_once Conf::path("routes") . "api.php"; // load routes
         return $this;
     }
 

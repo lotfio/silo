@@ -12,6 +12,9 @@
 
 use OoFile\Conf;
 use Ouch\Ouch;
+use Conso\{
+    Conso,Input,Output
+};
 
 class Kernel
 {
@@ -45,6 +48,26 @@ class Kernel
      */
     public function loadConsoleCommands() : self
     {
+        $silo = $conso = new Conso(new Input, new Output);
+
+        $silo->setSignature("
+ ..####...######..##.......####..
+ .##........##....##......##..##.
+ ..####.....##....##......##..##.
+ .....##....##....##......##..##.
+ ..####...######..######...####..
+");
+
+        $silo->setCommandsPath(__DIR__ . '/app/Console/Commands');
+        $silo->setCommandsNamespace("App\\Console\\Commands");
+        $silo->setName("Silo");
+        $silo->setVersion(_env('APP_VERSION'));
+
+        // load commands
+        foreach(Conf::conso('commands') as $command)
+            require_once $command;
+
+        $silo->run();
 
         return $this;
     }
@@ -54,6 +77,6 @@ class Kernel
      */
     public function bind()
     {
-        return $this->setErrorHandler()->loadConfig();
+        return $this->setErrorHandler()->loadConfig()->loadConsoleCommands();
     }
 }
