@@ -50,7 +50,7 @@ class Kernel
         $silo = $conso = new Conso(new Input, new Output);
 
         $silo->setSignature(file_get_contents(Conf::conso('signature')));
-        $silo->setCommandsPath(__DIR__ . '/app/Console/Commands');
+        $silo->setCommandsPath('app/Console/Commands');
         $silo->setCommandsNamespace("App\\Console\\Commands");
         $silo->setName("Silo");
         $silo->setVersion(_env('APP_VERSION', ''));

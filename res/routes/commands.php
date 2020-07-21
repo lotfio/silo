@@ -10,4 +10,4 @@
  *
  */
 
-$silo->command('hello', "App\\Console\\Commands\\Hello");
+$silo->command('welcome', "App\\Console\\Commands\\Welcome");

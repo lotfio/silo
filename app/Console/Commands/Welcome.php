@@ -4,18 +4,16 @@
  *
  * @author    <contact@lotfio.net>
  * @package   Conso PHP Console Creator
- * @version   1.0.0
+ * @version   1.0.1
  * @license   MIT
  * @category  CLI
  * @copyright 2019 Lotfio Lakehal
  */
 
-use Conso\Conso;
-use Conso\Command as BaseCommand;
-use Conso\Exceptions\InputException;
+use Conso\{Conso, Command};
 use Conso\Contracts\{CommandInterface,InputInterface,OutputInterface};
 
-class Hello extends BaseCommand implements CommandInterface
+class Welcome extends Command implements CommandInterface
 {
     /**
      * sub commands
@@ -46,7 +44,7 @@ class Hello extends BaseCommand implements CommandInterface
      *
      * @var string
      */
-    protected $description = 'This is Hello command description.';
+    protected $description = 'This is Welcome command description.';
 
     /**
      * execute method
@@ -55,8 +53,8 @@ class Hello extends BaseCommand implements CommandInterface
      * @param  OutputInterface $output
      * @return void
      */
-    public function execute(InputInterface $input, OutputInterface $output, Conso $app) : void
+    public function execute(InputInterface $input, OutputInterface $output) : void
     {
-        $this->displayCommandHelp($input, $output, $app);
+        $this->displayCommandHelp($input, $output);
     }
 }
