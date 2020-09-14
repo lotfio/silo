@@ -31,7 +31,7 @@ SILO is a simple lightweight PHP Framework for lazy devs.
 
 ### :computer: Contributing
 
-- Thank you for considering to contribute to Ouch. All the contribution guidelines are mentioned [here](CONTRIBUTE.md).
+- Thank you for considering to contribute to ***SILO***. All the contribution guidelines are mentioned [here](CONTRIBUTE.md).
 
 ### :page_with_curl: ChangeLog
 
